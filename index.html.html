@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0D2B4E">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>CENTRAL 7712 — Ambiente de Testes</title>
+<style>
+:root{--navy:#081b31;--navy2:#0D2B4E;--blue:#153f70;--orange:#F28C28;--bg:#091a2e;--card:#102942;--card2:#132f4d;--text:#fff;--muted:#9db0c5;--line:#234767;--green:#34c77b;--red:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#eef3f8;color:#1f2937}
+.hidden{display:none!important}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:18px 16px 15px;position:sticky;top:0;z-index:20}
+.brand{font-size:24px;font-weight:900;letter-spacing:.2px}.brand b{color:var(--orange)}.tagline{font-size:12px;color:#d9e4ef;margin-top:3px}.tagline strong{color:#ffd09a}
+.tabs{display:flex;gap:7px;overflow:auto;padding:9px 0 0}.tabs button{border:0;background:#163a60;color:#dce8f4;border-radius:999px;padding:8px 11px;font-weight:800;font-size:12px;white-space:nowrap}.tabs button.active{background:var(--orange);color:#fff}
+main{max-width:1180px;margin:auto;padding:16px}
+.admin{background:var(--bg);border-radius:22px;padding:15px;color:#fff;box-shadow:0 14px 35px rgba(8,27,49,.18)}
+.topline{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.topline h2{margin:0}.small{font-size:12px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.kpi{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:15px;padding:14px}.kpi span{font-size:11px;color:#b8c7d6}.kpi strong{font-size:27px;display:block;margin-top:4px}.up{font-size:11px;color:var(--green);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:10px;margin-top:10px}.box{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px}.box h3{margin:0 0 10px;font-size:15px}.row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.pill{font-size:10px;padding:4px 7px;border-radius:999px;background:#174f7c;color:#eaf5ff}
+.progress{height:9px;background:#16344f;border-radius:999px;overflow:hidden}.progress i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--orange),#ffb04f)}
+.public{background:#fff;border-radius:18px;padding:17px;box-shadow:0 7px 20px rgba(15,23,42,.08)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}label{font-size:12px;font-weight:800;color:#4b5563}input,select{width:100%;padding:11px;border:1px solid #dbe3eb;border-radius:11px;background:#fff;margin-top:4px}.notice{font-size:12px;color:#526274;background:#f8fafc;border:1px dashed #ccd6e0;border-radius:12px;padding:11px}.btn{border:0;border-radius:12px;padding:12px 14px;font-weight:900;cursor:pointer}.primary{background:var(--orange);color:#fff}.secondary{background:var(--navy2);color:#fff}
+.install{display:flex;gap:12px;align-items:center;background:#fff6ec;border:1px solid #ffd5a4;border-radius:15px;padding:13px;margin-bottom:12px}.install img{width:58px;height:58px;border-radius:14px}
+.bottomnav{display:none}
+@media(max-width:780px){.kpis{grid-template-columns:1fr 1fr}.grid2,.form{grid-template-columns:1fr}.full{grid-column:auto}.admin{border-radius:0;margin:0 -16px}.bottomnav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;background:#07192b;border-top:1px solid #173c5e;z-index:30}.bottomnav button{border:0;background:transparent;color:#c5d3e1;padding:11px 3px;font-size:10px}.bottomnav button.active{color:var(--orange)}main{padding-bottom:76px}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">CENTRAL <b>7712</b></div>
+<div class="tagline"><strong>Bota fé que dá!</strong> • Ambiente de Testes</div>
+<div class="tabs">
+<button class="active" data-view="painel">Painel</button>
+<button data-view="cadastro">Cadastro</button>
+<button data-view="pessoas">Pessoas</button>
+<button data-view="rede">Rede</button>
+<button data-view="acoes">Ações</button>
+<button data-view="agenda">Agenda</button><button data-view="mapa">Mapa</button>
+</div>
+</header>
+<main>
+<section id="painel" class="view">
+<div class="admin">
+<div class="topline"><div><h2>Painel Executivo</h2><div class="small">Coordenação Geral • acesso demonstrativo</div></div><span class="pill">ONLINE</span></div>
+<div class="kpis">
+<div class="kpi"><span>PARTICIPANTES</span><strong id="kTotal">1.922</strong><div class="up">↑ +128</div></div>
+<div class="kpi"><span>COLABORADORES</span><strong id="kCol">128</strong><div class="up">↑ +15</div></div>
+<div class="kpi"><span>APOIADORES</span><strong id="kApo">1.284</strong><div class="up">↑ +96</div></div>
+<div class="kpi"><span>SIMPATIZANTES</span><strong id="kSim">510</strong><div class="up">↑ +42</div></div>
+</div>
+<div class="grid2">
+<div class="box"><h3>Evolução da Rede</h3><div class="progress"><i></i></div><div class="row"><span>Meta demonstrativa</span><b>68%</b></div><div class="row"><span>Últimos 30 dias</span><b>+311</b></div></div>
+<div class="box"><h3>Ações em andamento</h3><div class="row"><span>Ação territorial</span><span class="pill">Hoje</span></div><div class="row"><span>Reunião de lideranças</span><span class="pill">Amanhã</span></div></div>
+</div>
+<div class="grid2">
+<div class="box"><h3>Participantes por Município</h3><div class="row"><span>Área A</span><b>612</b></div><div class="row"><span>Área B</span><b>498</b></div><div class="row"><span>Área C</span><b>442</b></div></div>
+<div class="box"><h3>Alertas</h3><div class="row"><span>Áreas sem liderança</span><span class="pill">12</span></div><div class="row"><span>Ações sem relatório</span><span class="pill">3</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="cadastro" class="view hidden">
+<div class="install"><img src="icon-192.png"><div><b>Instale como app</b><div class="small" style="color:#5b6570">Safari → Compartilhar → Adicionar à Tela de Início</div></div></div>
+<div class="public">
+<h2>Cadastro 7712</h2><p style="color:#687486">Use somente dados fictícios neste ambiente de testes.</p>
+<form id="formCad">
+<div class="form">
+<div><label>Nome</label><input id="nome" required></div>
+<div><label>WhatsApp</label><input id="whats" required></div>
+<div><label>Ano de nascimento</label><input id="ano" type="number" max="2010" required></div>
+<div><label>Gênero (opcional)</label><select id="genero"><option>Prefiro não informar</option><option>Feminino</option><option>Masculino</option><option>Outro</option></select></div>
+<div><label>Município</label><input id="municipio" required></div>
+<div><label>Bairro</label><input id="bairro" required></div>
+<div><label>Participação</label><select id="participacao"><option>Simpatizante</option><option>Apoiador</option><option>Colaborador</option><option>Interesse em liderança</option></select></div>
+<div><label>Origem</label><select id="origem"><option>QR Code</option><option>Indicação</option><option>Liderança</option><option>Evento</option><option>Site</option></select></div>
+<div class="full notice">Cadastro permitido somente para nascidos em 2010 ou antes. Esta versão grava apenas dados fictícios neste navegador.</div>
+</div>
+<button class="btn primary" style="margin-top:12px">Concluir cadastro teste</button>
+</form>
+<div id="ok" class="notice hidden" style="margin-top:12px"><b>Cadastro teste concluído.</b> O registro apareceu em Pessoas e no Painel.</div>
+</div>
+</section>
+
+<section id="pessoas" class="view hidden"><div class="public"><h2>Pessoas</h2><p style="color:#687486">Cadastros de teste deste aparelho</p><button class="btn secondary" onclick="show('cadastro')">+ Novo cadastro</button><div style="margin-top:12px"><label>Buscar</label><input id="buscaPessoa" placeholder="Nome, município ou bairro" oninput="render()"><label>Filtrar participação</label><select id="filtroPessoa" onchange="render()"><option value="">Todos</option><option>Simpatizante</option><option>Apoiador</option><option>Colaborador</option><option>Interesse em liderança</option></select></div><div id="listaPessoas"></div></div></section>
+
+<section id="rede" class="view hidden">
+<div class="admin"><h2>Rede / Organograma</h2><div class="grid2"><div class="box"><div class="row"><b>Coordenação Geral</b><span>1</span></div><div class="row"><b>Coordenadores</b><span>18</span></div><div class="row"><b>Lideranças</b><span>46</span></div><div class="row"><b>Colaboradores</b><span>128</span></div></div><div class="box"><div class="row"><b>Apoiadores</b><span>1.284</span></div><div class="row"><b>Simpatizantes</b><span>510</span></div></div></div></div>
+</section>
+
+<section id="acoes" class="view hidden"><div class="admin"><h2>Ações</h2><div class="box"><div class="row"><span>Ação territorial</span><span class="pill">Hoje</span></div><div class="row"><span>Reunião de lideranças</span><span class="pill">Amanhã</span></div><div class="row"><span>Visita de bairros</span><span class="pill">09/05</span></div></div></div></section>
+
+<section id="agenda" class="view hidden"><div class="admin"><h2>Agenda</h2><div class="box"><div class="row"><span>09:00 • Reunião interna</span><span class="pill">Interno</span></div><div class="row"><span>14:30 • Visita territorial</span><span class="pill">Operacional</span></div><div class="row"><span>19:00 • Encontro</span><span class="pill">Público</span></div></div></div></section>
+<section id="mapa" class="view hidden"><div class="admin"><h2>Mapa Territorial</h2><div class="kpis"><div class="kpi"><span>ÁREA A</span><strong>612</strong><div class="up">84%</div></div><div class="kpi"><span>ÁREA B</span><strong>498</strong><div class="up">71%</div></div><div class="kpi"><span>ÁREA C</span><strong>442</strong><div class="up">64%</div></div><div class="kpi"><span>ÁREAS ATIVAS</span><strong>18</strong><div class="up">teste</div></div></div></div></section></main>
+
+<div class="bottomnav">
+<button class="active" data-view="painel">Painel</button><button data-view="pessoas">Pessoas</button><button data-view="rede">Rede</button><button data-view="acoes">Ações</button><button data-view="agenda">Agenda</button>
+</div>
+
+<script>
+const KEY='central7712_v8_regs';
+function getRegs(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+function setRegs(v){localStorage.setItem(KEY,JSON.stringify(v))}
+function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.add('hidden'));document.getElementById(v).classList.remove('hidden');document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===v));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>show(b.dataset.view));
+function render(){
+ const r=getRegs(); 
+ const col=r.filter(x=>x.participacao==='Colaborador').length;
+ const apo=r.filter(x=>x.participacao==='Apoiador').length;
+ const sim=r.filter(x=>x.participacao==='Simpatizante').length;
+ kTotal.textContent=(1922+r.length).toLocaleString('pt-BR');
+ kCol.textContent=(128+col).toLocaleString('pt-BR');
+ kApo.textContent=(1284+apo).toLocaleString('pt-BR');
+ kSim.textContent=(510+sim).toLocaleString('pt-BR');
+ const q=(document.getElementById('buscaPessoa')?.value||'').toLowerCase(),f=(document.getElementById('filtroPessoa')?.value||'');const rr=r.filter(x=>(!f||x.participacao===f)&&(!q||[x.nome,x.municipio,x.bairro].join(' ').toLowerCase().includes(q)));listaPessoas.innerHTML=rr.length?rr.slice().reverse().map(x=>`<div class="row"><span><b>${x.nome}</b><br><small>${x.municipio} • ${x.bairro} • ${x.origem}</small></span><span class="pill">${x.participacao}</span></div>`).join(''):'<p style="color:#687486">Nenhum cadastro encontrado.</p>';
+}
+formCad.onsubmit=e=>{
+ e.preventDefault();
+ const a=parseInt(ano.value,10);
+ if(!a||a>2010){alert('Cadastro permitido somente para nascidos em 2010 ou antes.');return;}
+ const r=getRegs();r.push({nome:nome.value,whats:whats.value,ano:a,genero:genero.value,municipio:municipio.value,bairro:bairro.value,participacao:participacao.value,origem:origem.value});setRegs(r);render();formCad.reset();ok.classList.remove('hidden');
+}
+render();
+if('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js').catch(()=>{});
+</script>
+</body></html>
