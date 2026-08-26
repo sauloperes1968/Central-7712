@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CENTRAL 7712 — Ambiente de Testes</title>
+<style>
+:root{--b:#0D2B4E;--b2:#173F6D;--o:#F28C28;--bg:#F4F7FB;--m:#6B7280;--l:#E5E7EB}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:#1f2937}
+header{background:linear-gradient(100deg,var(--b),var(--b2));color:#fff;padding:22px 16px}.brand{font-size:28px;font-weight:900}.brand b{color:var(--o)}header p{margin:5px 0;color:#dbe7f3}header strong{color:#ffd09a}
+nav{display:flex;gap:7px;overflow:auto;padding:10px;background:#fff;border-bottom:1px solid var(--l);position:sticky;top:0}nav a{white-space:nowrap;text-decoration:none;color:var(--b);background:#eef3f8;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:800}
+main{max-width:1000px;margin:auto;padding:16px}section{padding:15px 0;scroll-margin-top:60px}h2{margin:0 0 5px}.muted{color:var(--m)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.card{background:#fff;border:1px solid var(--l);border-radius:16px;padding:15px;margin:10px 0;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+.num{font-size:30px;font-weight:900}.row{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--l)}.row:last-child{border:0}
+label{font-size:12px;font-weight:800}input,select{width:100%;padding:11px;border:1px solid var(--l);border-radius:10px;margin:5px 0 10px;background:#fff}.notice{background:#f8fafc;border:1px dashed #cbd5e1;padding:11px;border-radius:11px;font-size:12px;color:#475569}
+.btn{display:inline-block;background:var(--o);color:#fff;text-decoration:none;padding:11px 14px;border-radius:11px;font-weight:900;margin-top:10px}
+.hero{background:linear-gradient(120deg,var(--b),var(--b2));color:#fff;border-radius:18px;padding:18px}.hero p{color:#dce7f3}.hero strong{color:#ffd09a}
+footer{text-align:center;color:var(--m);font-size:11px;padding:25px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="brand">CENTRAL <b>7712</b></div><p><strong>Bota fé que dá!</strong></p><p>Ambiente de Testes</p></header>
+<nav><a href="#painel">Painel</a><a href="#cadastro">Cadastro</a><a href="#rede">Rede</a><a href="#acoes">Ações</a><a href="#agenda">Agenda</a><a href="#mapa">Mapa</a></nav>
+<main>
+<section id="painel"><h2>Painel Executivo</h2><p class="muted">Protótipo demonstrativo.</p><div class="grid">
+<div class="card"><b>Participantes</b><div class="num">1.922</div></div><div class="card"><b>Colaboradores</b><div class="num">128</div></div><div class="card"><b>Apoiadores</b><div class="num">1.284</div></div><div class="card"><b>Simpatizantes</b><div class="num">638</div></div></div></section>
+<section id="cadastro"><h2>Cadastro 7712</h2><p class="muted">Use somente dados fictícios neste protótipo.</p><div class="card">
+<label>Nome</label><input placeholder="Nome fictício"><label>WhatsApp</label><input placeholder="(21) 99999-9999">
+<label>Ano de nascimento</label><input type="number" max="2010" placeholder="1985"><label>Gênero (opcional)</label><select><option>Prefiro não informar</option><option>Feminino</option><option>Masculino</option><option>Outro</option></select>
+<label>Município</label><input placeholder="Município"><label>Bairro</label><input placeholder="Bairro">
+<label>Participação</label><select><option>Simpatizante</option><option>Apoiador</option><option>Colaborador</option><option>Interesse em liderança</option></select>
+<div class="notice">Cadastro permitido somente para nascidos em 2010 ou antes. Esta tela é apenas demonstrativa e não grava informações.</div><a class="btn" href="#boas">Concluir cadastro teste</a></div></section>
+<section id="boas"><div class="hero"><h2>Bem-vindo à CENTRAL 7712</h2><p><strong>Bota fé que dá!</strong></p><p>Obrigado por participar deste ambiente de testes.</p></div></section>
+<section id="rede"><h2>Rede / Organograma</h2><div class="grid"><div class="card"><div class="row"><b>Coordenação Geral</b><span>1 núcleo</span></div><div class="row"><b>Coordenadores</b><span>18</span></div><div class="row"><b>Lideranças</b><span>46</span></div><div class="row"><b>Colaboradores</b><span>128</span></div></div><div class="card"><div class="row"><b>Apoiadores</b><span>1.284</span></div><div class="row"><b>Simpatizantes</b><span>638</span></div><div class="notice">Apoiadores e Simpatizantes compõem a base de relacionamento.</div></div></div></section>
+<section id="acoes"><h2>Ações</h2><div class="card"><div class="row"><span>Encontro de equipe</span><b>Concluído</b></div><div class="row"><span>Ação territorial</span><b>Pendente</b></div><div class="row"><span>Reunião comunitária</span><b>Confirmada</b></div></div></section>
+<section id="agenda"><h2>Agenda</h2><div class="card"><div class="row"><span>09:00 • Reunião interna</span><b>Interno</b></div><div class="row"><span>14:30 • Visita territorial</span><b>Operacional</b></div><div class="row"><span>19:00 • Encontro</span><b>Público</b></div></div></section>
+<section id="mapa"><h2>Mapa Territorial</h2><div class="grid"><div class="card"><b>Área A</b><div class="num">84</div></div><div class="card"><b>Área B</b><div class="num">71</div></div><div class="card"><b>Área C</b><div class="num">64</div></div><div class="card"><b>Áreas ativas</b><div class="num">18</div></div></div><p class="muted">Números exclusivamente demonstrativos.</p></section>
+</main><footer>CENTRAL 7712 • Ambiente de Testes</footer>
+</body></html>
